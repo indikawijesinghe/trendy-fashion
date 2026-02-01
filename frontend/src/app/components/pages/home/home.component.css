@@ -1,0 +1,128 @@
+/* Favorite heart styles */
+.favorite {
+  color: red;
+  font-size: 1.5rem;
+  margin-right: 10px;
+}
+
+.favorite.not {
+  color: #ddd; /* Gray for not favorite */
+}
+
+/* Stars styles */
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.stars span {
+  color: #ddd; /* Empty star color */
+  font-size: 1.2rem;
+}
+
+.stars span.filled {
+  color: #ffd700; /* Gold for filled stars*/
+}
+
+.delivery-type {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+.delivery-icon {
+  font-size: 1.3rem;
+}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+li a{
+  height: 22.5rem;
+  width: 20rem;
+  border: 1px solid whitesmoke;
+  border-radius: 1rem;
+  margin: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  color: #e72929;
+}
+
+li a:hover{
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+li a img{
+  height: 14.5rem;
+  object-fit: cover;
+}
+
+.content{
+  margin-top: 0.3rem;
+  padding: 0.5rem 1rem;
+  position: relative;
+  height: 7rem;
+}
+
+.favorite{
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  font-size: 1.2rem;
+}
+
+.favorite.not{
+  color: gray;
+}
+
+.stars{
+  margin-bottom: 0.2rem;
+}
+
+.item-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.origins{
+  flex: 9;
+}
+
+.origins span{
+  background-color: whitesmoke;
+  border-radius: 2rem;
+  display: inline-block;
+  padding: 0 0.5rem;
+  margin-right: 0.3rem;
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 0.2rem;
+}
+
+.delivery-type{
+  flex: 8;
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.price{
+  position: absolute;
+  bottom: 0rem;
+  left: 0.9rem;
+  background: white;
+  padding: 0.3rem 100% 0 0;
+  color: #414141;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.7rem;
+}
