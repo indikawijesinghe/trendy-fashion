@@ -1,5 +1,7 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found [visible]="!items || !items.length"
+                resetLinkText="Reset Search"/>
 <ul>
     @for (item of items; track item.id) {
         <li>

@@ -17,7 +17,9 @@
                 <li>
                     <a routerLink="/cart-page">Cart
                         <span class="icon">🛒</span>
-                        <span class="count">3</span>
+                        @if (cartQuantity) {
+                            <span class="count">{{cartQuantity}}</span>
+                        }
                     </a>
                 </li>
             </ul>

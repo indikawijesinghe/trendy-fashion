@@ -5,11 +5,12 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { SearchComponent } from "../../partials/search/search.component";
 import e from 'express';
 import { TagsComponent } from "../../partials/tags/tags.component";
+import { NotFoundComponent } from "../../partials/not-found/not-found.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [RouterLink, SearchComponent, TagsComponent],
+  imports: [RouterLink, SearchComponent, TagsComponent, NotFoundComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })

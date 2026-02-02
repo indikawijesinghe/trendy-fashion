@@ -1,36 +1,42 @@
-<div class="container">
-    <img [src]="item.imageUrl" [alt]="item.name"/>
-    <div class="details">
-        <div class="header">
-            <span class="name">{{item.name}}</span>
-            <span class="favorite {{item.favorite? '' : 'not'}}">♥</span>
-        </div>
-        <div class="ratings">
-            @for (star of [1, 2, 3, 4, 5]; track star) {
-                <span [class.filled]="star <= item.stars">★</span>
-            }
-        </div>
-        <div class="origins">
-            <span>
-                @for (origin of item.origins; track origin) {
-                    {{origin}} @if (origin !== item.origins[item.origins.length - 1]) {, }
+@if (item.id) {
+    <div class="container">
+        <img [src]="item.imageUrl" [alt]="item.name"/>
+        <div class="details">
+            <div class="header">
+                <span class="name">{{item.name}}</span>
+                <span class="favorite {{item.favorite? '' : 'not'}}">♥</span>
+            </div>
+            <div class="ratings">
+                @for (star of [1, 2, 3, 4, 5]; track star) {
+                    <span [class.filled]="star <= item.stars">★</span>
                 }
-            </span>
+            </div>
+            <div class="origins">
+                <span>
+                    @for (origin of item.origins; track origin) {
+                        {{origin}} @if (origin !== item.origins[item.origins.length - 1]) {, }
+                    }
+                </span>
+            </div>
+            <div class="tags">
+                @for (tag of item.tags; track tag) {
+                    <a [routerLink]="['/tag', tag]">{{tag}}</a>
+                }
+            </div>
+            <div class="delivery-type">
+                <span class="delivery-icon">
+                    {{ item.deliveryType === 'COD' ? '💵' : '💳' }}
+                </span>
+                <span class="delivery-text">{{ item.deliveryType }}</span>
+            </div>
+            <div class="price">
+                <span>{{'Rs:'+item.price.toFixed(2) }}</span>
+            </div>
+            <button (click)="addToCart()">Add To Cart</button>
         </div>
-        <div class="tags">
-            @for (tag of item.tags; track tag) {
-                <a [routerLink]="['/tag', tag]">{{tag}}</a>
-            }
-        </div>
-        <div class="delivery-type">
-            <span class="delivery-icon">
-                {{ item.deliveryType === 'COD' ? '💵' : '💳' }}
-            </span>
-            <span class="delivery-text">{{ item.deliveryType }}</span>
-        </div>
-        <div class="price">
-            <span>{{'Rs:'+item.price.toFixed(2) }}</span>
-        </div>
-        <button>Add To Cart</button>
     </div>
-</div>
+} @else {
+    <app-not-found [visible]="!item.id"
+                notFoundMessage="Item Not Found!"
+                resetLinkText="Back To Homepage"/>
+}
